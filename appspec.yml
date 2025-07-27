@@ -7,10 +7,9 @@ os: linux
 # 하위 디렉토리별로 destination을 다르게 지정 가능
 # source 항목이 디렉토리면, 디렉토리 안의 디렉토리/파일들이 copy 됨 (지정한 디렉토리 자체는 copy 되지 않음)
 # source 항목이 파일이면, 해당 파일이 copy 됨
-# source는 codedeploy에게 알려준 파일에서 만약 해당 파일이 압축 파일이라면 압축을 해제 했을 때 파일들이 위치한 디렉토리를 의미함
 files:
   - source: /
-    destination: /src/kafka-producer # 각 서버들의 /src/kafka-producer 디렉토리에 파일을 복사함
+    destination: /src/kafka-producer
 
 # /src/kafka-producer 에 동일 파일이 존재할 경우 덮어쓰기
 # DISALLOW|OVERWRITE|RETAIN 지정 가능
@@ -30,4 +29,4 @@ hooks:
   AfterInstall:
     - location: deploy/after_install.sh
       timeout: 120
-      runs: kafka
+      runas: kafka
