@@ -1,3 +1,4 @@
 .python-version
 ansible_playbooks
 .idea
+.git-push-key
