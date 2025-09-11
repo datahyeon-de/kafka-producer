@@ -6,7 +6,7 @@ from apis.seoul_data.realtime_bicycle import RealtimeBicycle
 from datetime import datetime
 
 
-BROKER_LST = 'kafka01:9092,kafka2:9092,kafka3:9093'
+BROKER_LST = 'kafka01:9092,kafka02:9092,kafka03:9093'
 
 
 class BicycleProducer():
